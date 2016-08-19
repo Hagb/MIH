@@ -4,25 +4,28 @@ helptext="用法:\n
 	mih.sh --help	显示本页面"
 time_s=100
 if [ "$#" -gt 1 ]; then
-	echo "太多的参数"
+	echo "太多的参数" >&2
+	echo -e "$helptext" >&2
 	exit 1
 fi
 case $# in #参数处理
 	"0");;
 	"1")
 		if [ "$1" = "--help" ]; then 
-			echo -e $helptext 
+			echo -e "$helptext"
 			exit 0
 		fi
 		if grep '^[[:digit:]]*$' <<< "$1"; then #判断是否为数字
 			if [ "$1" -lt 0 ]; then
 				echo 无效的参数 "$1"
+				echo -e "$helptext" >&2
 				exit 1
 			else
 				time_s="$1"
 			fi
 		else
 			echo 无效的参数 "$1"
+			echo -e "$helptext" >&2
 			exit 1;
 		fi
 		;;
