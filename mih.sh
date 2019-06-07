@@ -1,4 +1,11 @@
 #!/bin/bash
+
+# Copyright 2019 Hagb and all other contributors
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#     http://www.apache.org/licenses/LICENSE-2.0
+
 helptext="用法:\n
 	mih.sh [时间]	指定向Minecraft输出字符时字符间的间隔时间(毫秒)，默认100\n
 	mih.sh --help	显示本页面"
